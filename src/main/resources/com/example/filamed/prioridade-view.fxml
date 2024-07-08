@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="815.0" prefWidth="375.0" style="-fx-background-color: #F1FAFF; -fx-padding: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.filamed2.PrioridadeController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="815.0" prefWidth="375.0" style="-fx-background-color: #F1FAFF; -fx-padding: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.filamed.PrioridadeController">
    <children>
       <Label prefWidth="345.0" style="-fx-label-padding: 10 0 90 0;" text="SELECIONE A PRIORIDADE DO PACIENTE" textAlignment="CENTER" textFill="#0480c4" wrapText="true">
          <font>

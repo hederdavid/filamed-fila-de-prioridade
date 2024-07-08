@@ -1,6 +1,5 @@
-package com.example.filamed2
+package com.example.filamed
 
-import javafx.collections.ObservableList
 import java.time.Duration
 import java.time.LocalDateTime
 
@@ -188,7 +187,7 @@ class FilaPrioridade(private val tamanho: Int = 10): Enfileiravel {
         var pacienteDesenfileirado: Paciente? = null
         var menorDataHora: LocalDateTime? = null
 
-        for (i in 0 until quantidade) {
+        for (i in 0 .. quantidade) {
             val paciente = pacientes[i]
             if (paciente?.prioridade == prioridade) {
                 if (pacienteDesenfileirado == null || paciente.dataHoraEnfileiramento.isBefore(menorDataHora)) {
@@ -200,6 +199,24 @@ class FilaPrioridade(private val tamanho: Int = 10): Enfileiravel {
 
         return pacienteDesenfileirado
     }
+
+    fun calcularPercentualAtendidosNoTempoRecomendado(segundos: Long): Double {
+        val horarioAtual = LocalDateTime.now()
+        var atendidosNoTempo = 0
+
+        for (i in 0 until quantidade) {
+            val paciente = pacientes[i] ?: continue
+            val tempoPermanencia = Duration.between(paciente.dataHoraEnfileiramento, horarioAtual).seconds
+
+            if (tempoPermanencia < segundos) {
+                atendidosNoTempo++
+            }
+        }
+
+        val totalPacientes = quantidade
+        return if (totalPacientes > 0) (atendidosNoTempo.toDouble() / totalPacientes) * 100 else 0.0
+    }
+
 
 
 }

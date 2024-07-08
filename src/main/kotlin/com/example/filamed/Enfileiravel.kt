@@ -1,4 +1,4 @@
-package com.example.filamed2
+package com.example.filamed
 
 interface Enfileiravel {
     fun enfileirar(paciente: Paciente)

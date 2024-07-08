@@ -96,7 +96,7 @@
   </component>
   <component name="RunManager">
     <configuration name="ApplicationKt" type="JetRunConfigurationType" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.filamed2.ApplicationKt" />
+      <option name="MAIN_CLASS_NAME" value="com.example.filamed.ApplicationKt" />
       <module name="filamed2" />
       <shortenClasspath name="NONE" />
       <method v="2">
@@ -198,6 +198,21 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/example/filamed/FilaPrioridade.kt</url>
+          <line>171</line>
+          <properties class="com.example.filamed.FilaPrioridade" method="calcularTempoMedioNaFila">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/filamed2$ApplicationKt.ic" NAME="ApplicationKt Coverage Results" MODIFIED="1719435252969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

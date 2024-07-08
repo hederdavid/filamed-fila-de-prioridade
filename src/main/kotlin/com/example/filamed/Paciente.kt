@@ -1,4 +1,4 @@
-package com.example.filamed2
+package com.example.filamed
 
 import java.time.Duration
 import java.time.LocalDate

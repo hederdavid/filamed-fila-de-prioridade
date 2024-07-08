@@ -1,4 +1,4 @@
-package com.example.filamed2
+package com.example.filamed
 
 import javafx.animation.KeyFrame
 import javafx.animation.Timeline

@@ -1,4 +1,4 @@
-package com.example.filamed2
+package com.example.filamed
 
 import javafx.event.ActionEvent
 import javafx.fxml.FXML

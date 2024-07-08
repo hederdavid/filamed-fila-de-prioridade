@@ -1,4 +1,4 @@
-package com.example.filamed2
+package com.example.filamed
 
 
 
@@ -66,9 +66,6 @@ class HomeController {
 
     @FXML
     private fun carregarTelaCadastro(event: ActionEvent) {
-        println(fila)
-        println(qtdPacientesEnfileirados)
-
         val loader = FXMLLoader(javaClass.getResource("cadastro-view.fxml"))
         root = loader.load()
 
@@ -115,6 +112,10 @@ class HomeController {
                 "s | Muita urgência: " + filaAtendidosMuitaUrgencia.calcularTempoMedioNaFila() + "s | Urgência: " + filaAtendidosUrgencia.calcularTempoMedioNaFila() +
                 "s | Pouca urgência: " + filaAtendidosPoucaUrgencia.calcularTempoMedioNaFila() + "s | Não urgência: " + filaAtendidosNaoUrgencia.calcularTempoMedioNaFila() +
                 "s"
+        alert.contentText = "Percentual de atendidos em tempo inferior ao recomendado: " + filaAtendidosEmergencia.calcularPercentualAtendidosNoTempoRecomendado(240) +
+                "% | Muita urgência: " + filaAtendidosMuitaUrgencia.calcularPercentualAtendidosNoTempoRecomendado(600) + "% | Urgência: " + filaAtendidosUrgencia.calcularPercentualAtendidosNoTempoRecomendado(3000) +
+                "% | Pouca urgência: " + filaAtendidosPoucaUrgencia.calcularPercentualAtendidosNoTempoRecomendado(7200) + "% | Não urgência: " + filaAtendidosNaoUrgencia.calcularPercentualAtendidosNoTempoRecomendado(14400) +
+                "%"
         alert.showAndWait()
     }
 
@@ -129,6 +130,8 @@ class HomeController {
                 idade.toInt() in 18..59 && qtdAdultos != 0 -> qtdAdultos--
                 idade.toInt() >= 60 && qtdIdosos != 0 -> qtdIdosos--
             }
+        } else {
+            alertaPacienteNulo(event)
         }
 
         when (fila.espiar()?.prioridade) {
@@ -136,8 +139,6 @@ class HomeController {
                 val paciente = fila.desenfileirar() ?: return
                 val horarioEnfileiramentoOriginal = paciente.dataHoraEnfileiramento
                 val cpfOriginal = paciente.cpf
-
-                paciente.dataHoraDesenfileiramento = LocalDateTime.now()
 
                 filaAtendidosEmergencia.enfileirar(paciente)
 
@@ -148,15 +149,13 @@ class HomeController {
                         break
                     }
                 }
-
-                println(filaAtendidosEmergencia)
+                paciente.dataHoraDesenfileiramento = LocalDateTime.now()
+                alertaInformacoesPacienteDesenfileirado(paciente, event)
             }
             4 -> {
                 val paciente = fila.desenfileirar() ?: return
                 val horarioEnfileiramentoOriginal = paciente.dataHoraEnfileiramento
                 val cpfOriginal = paciente.cpf
-
-                paciente.dataHoraDesenfileiramento = LocalDateTime.now()
 
                 filaAtendidosMuitaUrgencia.enfileirar(paciente)
 
@@ -167,13 +166,13 @@ class HomeController {
                         break
                     }
                 }
+                paciente.dataHoraDesenfileiramento = LocalDateTime.now()
+                alertaInformacoesPacienteDesenfileirado(paciente, event)
             }
             3 -> {
                 val paciente = fila.desenfileirar() ?: return
                 val horarioEnfileiramentoOriginal = paciente.dataHoraEnfileiramento
                 val cpfOriginal = paciente.cpf
-
-                paciente.dataHoraDesenfileiramento = LocalDateTime.now()
 
                 filaAtendidosUrgencia.enfileirar(paciente)
 
@@ -184,13 +183,13 @@ class HomeController {
                         break
                     }
                 }
+                paciente.dataHoraDesenfileiramento = LocalDateTime.now()
+                alertaInformacoesPacienteDesenfileirado(paciente, event)
             }
             2 -> {
                 val paciente = fila.desenfileirar() ?: return
                 val horarioEnfileiramentoOriginal = paciente.dataHoraEnfileiramento
                 val cpfOriginal = paciente.cpf
-
-                paciente.dataHoraDesenfileiramento = LocalDateTime.now()
 
                 filaAtendidosPoucaUrgencia.enfileirar(paciente)
 
@@ -201,13 +200,14 @@ class HomeController {
                         break
                     }
                 }
+
+                paciente.dataHoraDesenfileiramento = LocalDateTime.now()
+                alertaInformacoesPacienteDesenfileirado(paciente, event)
             }
             1 -> {
                 val paciente = fila.desenfileirar() ?: return
                 val horarioEnfileiramentoOriginal = paciente.dataHoraEnfileiramento
                 val cpfOriginal = paciente.cpf
-
-                paciente.dataHoraDesenfileiramento = LocalDateTime.now()
 
                 filaAtendidosNaoUrgencia.enfileirar(paciente)
 
@@ -218,6 +218,9 @@ class HomeController {
                         break
                     }
                 }
+
+                paciente.dataHoraDesenfileiramento = LocalDateTime.now()
+                alertaInformacoesPacienteDesenfileirado(paciente, event)
             }
             else -> fila.desenfileirar()
         }
@@ -237,7 +240,6 @@ class HomeController {
             qtdAdultos = 0
             qtdIdosos = 0
             senhaLabel.text = "N0"
-
         } else {
             nomeProximoPaciente.text = fila.espiar()?.nomeCompleto
 
@@ -325,5 +327,35 @@ class HomeController {
             filaAtendidosNaoUrgencia)
     }
 
+    private fun alertaPacienteNulo(event: ActionEvent) {
+        val alert = Alert(Alert.AlertType.INFORMATION)
+        alert.title = "Informações"
+        alert.headerText = "Nenhum paciente na fila!"
+        alert.contentText = "A fila de pacientes está vazia, nenhum paciente desenfileirado!"
+        alert.showAndWait()
+    }
 
+    private fun alertaInformacoesPacienteDesenfileirado(paciente: Paciente, event: ActionEvent) {
+        paciente.dataHoraDesenfileiramento = LocalDateTime.now()
+        val alert = Alert(Alert.AlertType.INFORMATION)
+        alert.title = "Informações"
+        alert.headerText = "Paciente atendido"
+        alert.contentText = "Nome do paciente: " + paciente.nomeCompleto + " | Senha: " + paciente.senha + " | Tempo de permanência na fila: " +
+                paciente.calcularTempoNaFila()
+        alert.showAndWait()
+    }
+
+    @FXML
+    private fun alertaMaisDetalhes(event: ActionEvent) {
+        val alert = Alert(Alert.AlertType.INFORMATION)
+        alert.title = "Detalhes"
+        if (fila.espiar() != null) {
+            fila.espiar()!!.dataHoraDesenfileiramento = LocalDateTime.now()
+            alert.headerText = "CPF: " + fila.espiar()?.cpf + " | Sexo: " + fila.espiar()?.sexo + " | Relato de queixas e sintomas: " +
+                    fila.espiar()?.relatoQueixasSintomas + " | Tempo na fila: " + fila.espiar()?.calcularTempoNaFila()
+        } else {
+            alert.headerText = "Nenhum paciente na fila."
+        }
+        alert.showAndWait()
+    }
 }

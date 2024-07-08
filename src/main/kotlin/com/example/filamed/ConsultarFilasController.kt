@@ -1,4 +1,4 @@
-package com.example.filamed2
+package com.example.filamed
 
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
@@ -148,8 +148,6 @@ class ConsultarFilasController {
             carregarTelaHome(event)
         }
         alert.showAndWait()
-
-
     }
 
     fun setDadosConsultarFilas(fila: FilaPrioridade, qtdPacientesEnfileirados: Int, qtdCriancas: Int, qtdAdolescentes: Int,

@@ -1,4 +1,4 @@
-package com.example.filamed2
+package com.example.filamed
 
 import javafx.event.ActionEvent
 import javafx.fxml.FXMLLoader
@@ -49,12 +49,9 @@ class PrioridadeController {
         root = loader.load()
 
         inserirPacienteCadastrado()
-        println(fila).toString()
-        println(qtdPacientesEnfileirados)
 
         atualizarDadosTelaHome(loader)
 
-        //root = FXMLLoader.load(javaClass.getResource("home-view.fxml"))
         stage = (event.source as Node).scene.window as Stage
         scene = Scene(root)
         stage.scene = scene
