@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="" alignment="TOP_CENTER" prefHeight="812.0" prefWidth="375.0" spacing="20.0" style="-fx-background-color: #F1FAFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.filamed2.HomeController">
+    
+   <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Label contentDisplay="TOP" prefHeight="70.0" prefWidth="335.0" text="SISTEMA DE GERENCIAMENTO DE PACIENTES" textAlignment="CENTER" textFill="#0480c4" textOverrun="CLIP" wrapText="true">
+      <font>
+         <Font name="System Bold" size="22.0" />
+      </font>
+   </Label>
+   <Pane prefHeight="79.0" prefWidth="335.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 0);">
+      <children>
+         <VBox alignment="CENTER" layoutX="98.0" layoutY="10.0" prefHeight="41.0" prefWidth="237.0">
+            <children>
+               <Label fx:id="pacientesNaFila" text="0" textAlignment="CENTER">
+                  <font>
+                     <Font name="Century" size="37.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+         <VBox alignment="CENTER" layoutX="98.0" layoutY="49.0" prefHeight="27.0" prefWidth="237.0">
+            <children>
+            
+                            <Label text="Pacientes na fila">
+                  <font>
+                     <Font size="17.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+         <Pane layoutY="-1.0" prefHeight="80.0" prefWidth="98.0" style="-fx-background-color: #0480C4; -fx-background-radius: 15 0 0 15;">
+            <children>
+               <ImageView fitHeight="41.0" fitWidth="50.0" layoutX="31.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../imgs/tall-person.png" />
+                  </image>
+               </ImageView>
+            </children>
+         </Pane>
+      </children>
+   </Pane>
+   <Pane prefHeight="220.0" prefWidth="335.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 0);">
+      <children>
+         <Pane prefHeight="41.0" prefWidth="335.0" style="-fx-background-color: #0480C4; -fx-background-radius: 15 15 0 0;">
+            <children>
+               <VBox alignment="CENTER" prefHeight="41.0" prefWidth="335.0">
+                  <children>
+                     <Label alignment="CENTER" contentDisplay="CENTER" text="PRÓXIMO PACIENTE" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                        <font>
+                           <Font size="17.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+            </children>
+         </Pane>
+         <VBox alignment="CENTER" layoutY="37.0" prefHeight="57.0" prefWidth="335.0">
+            <children>
+               <Label fx:id="nomeProximoPaciente" alignment="CENTER" contentDisplay="CENTER" text="NENHUM PACIENTE NA FILA" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+                  <font>
+                     <Font size="17.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+         <VBox alignment="TOP_CENTER" layoutY="87.0" prefHeight="27.0" prefWidth="335.0">
+            <children>
+               <Label fx:id="senhaLabel" text="N0" textAlignment="CENTER" wrapText="true">
+                  <font>
+                     <Font size="15.0" />
+                  </font>
+                  <graphic>
+                     <Label text="Senha:" textAlignment="CENTER" wrapText="true">
+                        <font>
+                           <Font size="15.0" />
+                        </font>
+                     </Label>
+                  </graphic>
+               </Label>
+            </children>
+         </VBox>
+         <VBox alignment="TOP_CENTER" layoutY="118.0" prefHeight="27.0" prefWidth="335.0">
+            <children>
+               <Label fx:id="idadeProximoPaciente" text="0" textAlignment="CENTER" wrapText="true">
+                  <font>
+                     <Font size="15.0" />
+                  </font>
+                  <graphic>
+                     <Label text="Idade: " textAlignment="CENTER" wrapText="true">
+                        <font>
+                           <Font size="15.0" />
+                        </font>
+                     </Label>
+                  </graphic>
+               </Label>
+            </children>
+         </VBox>
+         <Pane layoutX="78.0" layoutY="145.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="187.0" style="-fx-background-radius: 15; -fx-background-color: #03537F;">
+            <children>
+               <VBox alignment="CENTER" layoutX="-25.0" layoutY="-11.0" prefHeight="64.0" prefWidth="237.0">
+                  <children>
+                     <Label fx:id="prioridadeDoPaciente" alignment="CENTER" prefHeight="26.0" prefWidth="194.0" text="NÃO DEFINIDA" textFill="WHITE">
+                        <font>
+                           <Font size="14.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+            </children>
+         </Pane>
+      </children>
+   </Pane>
+   <Pane prefHeight="178.0" prefWidth="338.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 0);">
+      <children>
+         <Pane prefHeight="41.0" prefWidth="335.0" style="-fx-background-color: #0480C4; -fx-background-radius: 15 15 0 0;">
+            <children>
+               <VBox alignment="CENTER" layoutY="1.0" prefHeight="41.0" prefWidth="335.0">
+                  <children>
+                     <Label alignment="CENTER" contentDisplay="CENTER" text="Pacientes por faixa etária" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                        <font>
+                           <Font size="17.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+            </children>
+         </Pane>
+         <Pane layoutY="41.0" prefHeight="35.0" prefWidth="335.0" style="-fx-background-color: #FFFFFF;">
+            <children>
+               <VBox alignment="CENTER_LEFT" layoutX="13.0" prefHeight="35.0" prefWidth="85.0">
+                  <children>
+                     <Label alignment="CENTER" contentDisplay="CENTER" text="Crianças" textAlignment="CENTER">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+               <VBox alignment="CENTER_LEFT" layoutX="112.0" prefHeight="38.0" prefWidth="223.0">
+                  <children>
+                     <Label fx:id="qtdCriancasLabel" alignment="CENTER" contentDisplay="CENTER" text="0" textAlignment="CENTER">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+            </children>
+         </Pane>
+         <Pane layoutY="76.0" prefHeight="35.0" prefWidth="335.0" style="-fx-background-color: #AFD7FE;">
+            <children>
+               <VBox alignment="CENTER_LEFT" layoutX="12.0" prefHeight="35.0" prefWidth="77.0">
+                  <children>
+                     <Label alignment="CENTER" contentDisplay="CENTER" text="Adolescentes" textAlignment="CENTER">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+               <VBox alignment="CENTER_LEFT" layoutX="112.0" prefHeight="38.0" prefWidth="223.0">
+                  <children>
+                     <Label fx:id="qtdAdolescentesLabel" alignment="CENTER" contentDisplay="CENTER" text="0" textAlignment="CENTER">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+            </children></Pane>
+         <Pane layoutY="111.0" prefHeight="35.0" prefWidth="335.0" style="-fx-background-color: #FFFFFF;">
+            <children>
+               <VBox alignment="CENTER_LEFT" layoutX="112.0" prefHeight="38.0" prefWidth="223.0">
+                  <children>
+                     <Label fx:id="qtdAdultosLabel" alignment="CENTER" contentDisplay="CENTER" text="0" textAlignment="CENTER">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="8.0" text="Adultos" textAlignment="CENTER">
+                  <font>
+                     <Font size="13.0" />
+                  </font>
+               </Label>
+            </children>
+         </Pane>
+         <Pane layoutY="146.0" prefHeight="35.0" prefWidth="335.0" style="-fx-background-color: #AFD7FE; -fx-background-radius: 0 0 15 15;">
+            <children>
+               <VBox alignment="CENTER_LEFT" layoutX="112.0" prefHeight="38.0" prefWidth="223.0">
+                  <children>
+                     <Label fx:id="qtdIdososLabel" alignment="CENTER" contentDisplay="CENTER" text="0" textAlignment="CENTER">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="7.0" text="Idosos" textAlignment="CENTER">
+                  <font>
+                     <Font size="13.0" />
+                  </font>
+               </Label>
+            </children></Pane>
+         <Pane layoutX="97.0" layoutY="41.0" opacity="0.2" prefHeight="140.0" prefWidth="2.0" style="-fx-background-color: #000000;" />
+      </children>
+   </Pane>
+   <Pane prefHeight="155.0" prefWidth="335.0" style="-fx-background-color: #0480C4; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 0); -fx-background-radius: 15;">
+      <children>
+         <Label layoutX="137.0" layoutY="10.0" text="MENU" textFill="WHITE">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Label>
+         <Button fx:id="cadastrarPaciente" layoutX="27.0" layoutY="36.0" mnemonicParsing="false" onAction="#carregarTelaCadastro" prefHeight="53.0" prefWidth="66.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #0480C4; -fx-border-radius: 10; -fx-background-radius: 10;" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <graphic>
+               <ImageView fitHeight="43.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../imgs/cadastrar-paciente.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Label layoutX="17.0" layoutY="95.0" text="Cadastrar Paciente" textFill="WHITE">
+            <font>
+               <Font size="10.0" />
+            </font></Label>
+         <Button layoutX="107.0" layoutY="35.0" mnemonicParsing="false" onAction="#carregarTelaVerificarPacienteEnfileirado" prefHeight="55.0" prefWidth="2.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #0480C4;" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <graphic>
+               <ImageView fitHeight="47.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../imgs/verificar-cpf.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Button layoutX="188.0" layoutY="35.0" mnemonicParsing="false" onAction="#carregarTelaConsultarFilas" prefHeight="57.0" prefWidth="63.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-border-color: #0480C4; -fx-background-radius: 10;" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+               <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../imgs/consultar-filas.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Label layoutX="188.0" layoutY="95.0" text="Consultar Filas" textFill="WHITE">
+            <font>
+               <Font size="10.0" />
+            </font></Label>
+         <Label layoutX="110.0" layoutY="95.0" text="Verificar CPF" textFill="WHITE">
+            <font>
+               <Font size="10.0" />
+            </font></Label>
+         <Button layoutX="269.0" layoutY="50.0" mnemonicParsing="false" onAction="#desenfileirarPaciente" text="Button" />
+         <Button layoutX="102.0" layoutY="116.0" mnemonicParsing="false" onAction="#consultarEstatisticas" text="Consultar Estatísticas" />
+      </children>
+   </Pane>
+</VBox>
