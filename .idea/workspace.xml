@@ -11,10 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="41d5d62c-d457-4fc0-9614-726bb08ff3f2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/filamed/FilaPrioridade.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/filamed/FilaPrioridade.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/filamed/HomeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/filamed/HomeController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/filamed/Paciente.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/filamed/Paciente.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/filamed/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/filamed/home-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filamed2_jar/filamed.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +63,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/Heder David/Downloads/filamed2/src/main/kotlin/com/example/filamed2&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Heder David/Downloads/filamed-main/src/main/resources/com/example/filamed2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Heder David/IdeaProjects/estruturas_dados_meu&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -200,27 +197,13 @@
       <workItem from="1720388731826" duration="2115000" />
       <workItem from="1720430046486" duration="4533000" />
       <workItem from="1720455286853" duration="63000" />
-      <workItem from="1720455367020" duration="678000" />
+      <workItem from="1720455367020" duration="1431000" />
+      <workItem from="1720467270749" duration="1437000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-function">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/example/filamed/FilaPrioridade.kt</url>
-          <line>170</line>
-          <properties class="com.example.filamed.FilaPrioridade" method="calcularTempoMedioNaFila">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/filamed2$ApplicationKt.ic" NAME="ApplicationKt Coverage Results" MODIFIED="1719435252969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
