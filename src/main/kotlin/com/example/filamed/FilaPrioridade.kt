@@ -168,7 +168,7 @@ class FilaPrioridade(private val tamanho: Int = 10): Enfileiravel {
         return pacientes[i]
     }
 
-    fun calcularTempoMedioNaFila(): Double {
+    fun calcularTempoMedioNaFila(): String {
         var somaTempo = 0L
         var quantidadePacientes = 0
 
@@ -179,9 +179,18 @@ class FilaPrioridade(private val tamanho: Int = 10): Enfileiravel {
             quantidadePacientes++
         }
 
-        var tempo: Double = if (quantidadePacientes > 0) somaTempo.toDouble() / quantidadePacientes else 0.0
-        return tempo
+        if (quantidadePacientes > 0) {
+            val tempoMedioSegundos = somaTempo / quantidadePacientes
+            val minutos = tempoMedioSegundos / 60
+            val segundos = tempoMedioSegundos % 60
+
+            return "${minutos}m ${segundos}s"
+        } else {
+            return "0m 0s"
+        }
     }
+
+
 
     private fun chamarPrimeiroPrioridade(prioridade: Int): Paciente? {
         var pacienteDesenfileirado: Paciente? = null
@@ -216,7 +225,4 @@ class FilaPrioridade(private val tamanho: Int = 10): Enfileiravel {
         val totalPacientes = quantidade
         return if (totalPacientes > 0) (atendidosNoTempo.toDouble() / totalPacientes) * 100 else 0.0
     }
-
-
-
 }

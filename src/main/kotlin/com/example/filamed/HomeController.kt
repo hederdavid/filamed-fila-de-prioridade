@@ -109,9 +109,9 @@ class HomeController {
         val alert = Alert(Alert.AlertType.INFORMATION)
         alert.title = "Estatísticas"
         alert.headerText = "Tempo médio de permanência nas filas: Emergência: " + filaAtendidosEmergencia.calcularTempoMedioNaFila() +
-                "s | Muita urgência: " + filaAtendidosMuitaUrgencia.calcularTempoMedioNaFila() + "s | Urgência: " + filaAtendidosUrgencia.calcularTempoMedioNaFila() +
-                "s | Pouca urgência: " + filaAtendidosPoucaUrgencia.calcularTempoMedioNaFila() + "s | Não urgência: " + filaAtendidosNaoUrgencia.calcularTempoMedioNaFila() +
-                "s"
+                " | Muita urgência: " + filaAtendidosMuitaUrgencia.calcularTempoMedioNaFila() + " | Urgência: " + filaAtendidosUrgencia.calcularTempoMedioNaFila() +
+                " | Pouca urgência: " + filaAtendidosPoucaUrgencia.calcularTempoMedioNaFila() + " | Não urgência: " + filaAtendidosNaoUrgencia.calcularTempoMedioNaFila() +
+                ""
         alert.contentText = "Percentual de atendidos em tempo inferior ao recomendado: " + filaAtendidosEmergencia.calcularPercentualAtendidosNoTempoRecomendado(240) +
                 "% | Muita urgência: " + filaAtendidosMuitaUrgencia.calcularPercentualAtendidosNoTempoRecomendado(600) + "% | Urgência: " + filaAtendidosUrgencia.calcularPercentualAtendidosNoTempoRecomendado(3000) +
                 "% | Pouca urgência: " + filaAtendidosPoucaUrgencia.calcularPercentualAtendidosNoTempoRecomendado(7200) + "% | Não urgência: " + filaAtendidosNaoUrgencia.calcularPercentualAtendidosNoTempoRecomendado(14400) +

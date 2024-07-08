@@ -19,10 +19,9 @@ data class Paciente(var nomeCompleto: String, var cpf: String, var sexo: Char, v
 
     fun calcularTempoNaFila(): String {
         val duration = Duration.between(dataHoraEnfileiramento, dataHoraDesenfileiramento)
-        val seconds = duration.seconds
-        return "${seconds}s"
+        val minutes = duration.toMinutes()
+        val seconds = duration.seconds % 60
+
+        return "${minutes}min ${seconds}s"
     }
-
-
-
 }

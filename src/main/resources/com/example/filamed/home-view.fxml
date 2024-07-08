@@ -121,7 +121,10 @@
                </VBox>
             </children>
          </Pane>
-         <Button layoutX="123.0" layoutY="189.0" mnemonicParsing="false" onAction="#alertaMaisDetalhes" style="-fx-background-radius: 10; -fx-background-color: #03537F;" text="Mais detalhes" textFill="WHITE" />
+         <Button layoutX="123.0" layoutY="189.0" mnemonicParsing="false" onAction="#alertaMaisDetalhes" style="-fx-background-radius: 10; -fx-background-color: #03537F;" text="Mais detalhes" textFill="WHITE">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
       </children>
    </Pane>
    <Pane prefHeight="178.0" prefWidth="338.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 0);">
@@ -282,12 +285,21 @@
                      <Image url="@../../../imgs/atender.png" />
                   </image>
                </ImageView>
-            </graphic></Button>
-         <Button layoutX="102.0" layoutY="123.0" mnemonicParsing="false" onAction="#consultarEstatisticas" style="-fx-background-color: #03537F; -fx-background-radius: 10;" text="Consultar Estatísticas" textFill="WHITE" />
+            </graphic>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
+         <Button layoutX="102.0" layoutY="123.0" mnemonicParsing="false" onAction="#consultarEstatisticas" style="-fx-background-color: #03537F; -fx-background-radius: 10;" text="Consultar Estatísticas" textFill="WHITE">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
          <Label layoutX="270.0" layoutY="105.0" text="Atender" textFill="WHITE">
             <font>
                <Font size="10.0" />
             </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
          </Label>
       </children>
    </Pane>
